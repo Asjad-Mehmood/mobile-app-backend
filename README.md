@@ -95,7 +95,7 @@ You don't need to create any tables. The API creates them and loads the menu and
 
 4. Deploy, then open `https://<your-service>.onrender.com/health`. It should show `{"ok":true,...}`.
 
-> Use a paid instance ("Starter", set in `render.yaml`). Free instances sleep after inactivity, which drops the live connections.
+> `render.yaml` uses Render's **free** plan. It sleeps after ~15 minutes without traffic, and the first request afterwards takes about a minute while it wakes up; live updates resume once the apps reconnect. For a live bakery, change `plan: free` to `plan: starter` ($7/month) so it never sleeps.
 > Railway, Fly.io or any VPS work too: `cd backend && npm ci && npm run build && npm start` (Docker: `backend/Dockerfile`).
 
 ## 3. Point the apps at your API

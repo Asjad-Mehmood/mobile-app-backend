@@ -4,7 +4,7 @@ services:
     name: crumb-and-craft-api
     runtime: node
     region: singapore
-    plan: starter            # "free" sleeps when idle, which drops live connections
+    plan: free               # Free: sleeps after ~15 min idle (first request then takes ~1 min). Change to "starter" ($7/mo) to stay always-on.
     rootDir: backend
     buildCommand: npm ci && npm run build
     startCommand: node dist/server.js
