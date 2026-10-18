@@ -1,0 +1,22 @@
+# Render Blueprint: New → Blueprint → pick this repo. Fill the secret env vars when prompted.
+services:
+  - type: web
+    name: crumb-and-craft-api
+    runtime: node
+    region: singapore
+    plan: starter            # "free" sleeps when idle, which drops live connections
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_DIRECT
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

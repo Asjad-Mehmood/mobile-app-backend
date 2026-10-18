@@ -1,0 +1,34 @@
+# Secrets
+.env
+*.keystore
+*.jks
+key.properties
+
+# Node
+node_modules/
+backend/dist/
+
+# Flutter / Dart
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/.kotlin/
+**/android/app/.cxx/
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+
+# OS
+.DS_Store
